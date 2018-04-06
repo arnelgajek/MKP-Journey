@@ -283,6 +283,25 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="SPA\App.js" />
+    <Content Include="SPA\Controller\ChatSupportController.js" />
+    <Content Include="SPA\Controller\CreateAccountController.js" />
+    <Content Include="SPA\Controller\HandleVehicleController.js" />
+    <Content Include="SPA\Controller\JourneyReportController.js" />
+    <Content Include="SPA\Controller\LoginController.js" />
+    <Content Include="SPA\Controller\NewJourneyController.js" />
+    <Content Include="SPA\Controller\SummaryController.js" />
+    <Content Include="SPA\Images\backgroundImage.jpeg" />
+    <Content Include="SPA\Images\pageFavicon.jpeg" />
+    <Content Include="SPA\Includes\Menu.PartialView.html" />
+    <Content Include="SPA\Index.html" />
+    <Content Include="SPA\View\ChatSupportView.html" />
+    <Content Include="SPA\View\CreateAccountView.html" />
+    <Content Include="SPA\View\HandleVehicleView.html" />
+    <Content Include="SPA\View\JourneyReportView.html" />
+    <Content Include="SPA\View\LoginView.html" />
+    <Content Include="SPA\View\NewJourneyView.html" />
+    <Content Include="SPA\View\SummaryView.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -292,14 +311,10 @@
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
+    <Content Include="SPA\Less\MyStyleSheet.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="SPA\Controller\" />
-    <Folder Include="SPA\Images\" />
-    <Folder Include="SPA\Includes\" />
-    <Folder Include="SPA\Less\" />
-    <Folder Include="SPA\View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

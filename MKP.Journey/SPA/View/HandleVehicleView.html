@@ -1,0 +1,43 @@
+﻿<div class="center-block" id="handleVehicleBox">
+    <br />
+    <data-ng-include src="'/SPA/Includes/Menu.PartialView.html'">
+        <!--Menu.PartialView.html-->
+    </data-ng-include>
+    <div class="page-header">
+        <br />
+        <h3><strong>{{titleHandleVehicle}}</strong></h3>
+    </div>
+    <div id="accordion">
+        <div class="card" data-ng-repeat="vehicle in vehicles">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#{{vehicle.RegNumber}}" aria-expanded="true" aria-controls="collapseOne">
+                        <strong>{{vehicle.RegNumber}}</strong>
+                    </button>
+                </h5>
+            </div>
+            <div id="{{vehicle.RegNumber}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <button type="submit" data-ng-click="activeVehicle" class="btn btn-success btn-xs">Aktivera</button>
+                    <button type="submit" data-ng-click="inactiveVehicle" class="btn btn-warning btn-xs">Inaktivera</button>
+                    <button type="submit" data-ng-click="standardVehicle" class="btn btn-secondary btn-xs">Standardfordon</button>
+                    <button type="button" data-ng-click="deleteVehicle(vehicle)" class="btn btn-danger btn-xs">Ta bort</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <p><strong>{{addNewVehicleTitle}}</strong></p>
+    <form ng-submit="addVehicle()">
+        <input type="text" class="form-control" id="regNumber" placeholder="Registreringsnummer..." name="regNumber" data-ng-model="formData.regNumber">
+        <br />
+        <button type="submit" class="btn btn-default"><strong>Lägg till</strong></button>
+    </form>
+    <!--
+    • Ange ett fordon som standard/förvalsfordon
+    • Aktivera ett fordon
+    • Inaktivera ett fordon – Detta innebär att den inte kommer dyka upp i några dropdown-listor.
+    -->
+    <br />
+    <br />
+</div>

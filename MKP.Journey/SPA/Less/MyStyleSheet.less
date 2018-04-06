@@ -1,0 +1,69 @@
+﻿/* Creating the variables that will run through the whole project: */
+@bgimage: "../Images/backgroundImage.jpeg";
+
+@media only screen and (min-width : 320px) {
+
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        background-image: url(@bgimage);
+        /*background-color: lightsteelblue;*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+
+        #loginBox, #createAccountBox, #welcomeMessageBox, #newJourneyBox, #journeyReportBox, #handleVehicleBox, #chatSupportBox {
+            display: block;
+            height: 50%;
+            background-color: white;
+            vertical-align: middle;
+            opacity: 0.9;
+            border-radius: 10px;
+            padding: 0 15px;
+            margin: 10% auto;
+
+            input {
+                margin-top: 10px;
+            }
+
+            #arrend, #notes {
+                margin-top: 10px;
+            }
+        }
+
+        .dropdown {
+            text-align: right !important;
+        }
+
+        #accordion {
+
+            button {
+                color: black;
+            }
+
+            .card-body {
+
+                button {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    input#dateToday.form-control {
+        color: red;
+    }
+
+    #loginProfileImage {
+        font-size: 150px;
+    }
+
+    #newJourney {
+        font-size: 30px;
+        background-color: lawngreen;
+    }
+}

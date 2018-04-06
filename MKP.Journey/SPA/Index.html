@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <!-- Makes the application runable at a mobilephone: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey</title>
+
+    <!-- Scripts: -->
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="App.js"></script>
+
+    <!-- Placera dessa i bundleconfig kanske? -->
+    <script src="Controller/LoginController.js"></script>
+    <script src="Controller/CreateAccountController.js"></script>
+    <script src="Controller/SummaryController.js"></script>
+    <script src="Controller/NewJourneyController.js"></script>
+    <script src="Controller/JourneyReportController.js"></script>
+    <script src="Controller/HandleVehicleController.js"></script>
+    <script src="Controller/ChatSupportController.js"></script>
+
+    <!-- Styling: -->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Less/MyStyleSheet.min.css" rel="stylesheet" />
+    <link rel="icon" href="Images/pageFavicon.jpeg" />
+</head>
+<body>
+    <!-- AngularJS: -->
+    <!-- This is where the applikation will be presented in the different Views created: -->
+    <div class="container">
+        <data-ng-view>
+        </data-ng-view>
+    </div>
+</body>
+</html>

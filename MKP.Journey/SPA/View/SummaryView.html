@@ -1,0 +1,27 @@
+﻿<div class="center-block" id="welcomeMessageBox">
+    <br />
+    <data-ng-include src="'/SPA/Includes/Menu.PartialView.html'">
+        Menu.PartialView.html
+    </data-ng-include>
+    <div class="page-header">
+        <br />
+        <span class="glyphicon glyphicon-user" id="loginProfileImage"></span>
+        <!--<h1><strong>{{titleWelcome}}</strong></h1>-->
+    </div>
+    <!-- Submit-button for quick access to start a new journey: -->
+    <a href="Index.html#!/NewJourney" id="newJourney" class="btn btn-default" role="button"><strong>Ny Resa</strong></a>
+    <div class="center-block" id="onGoingJourneyBox">
+        <div class="page-header">
+            <h3><strong>{{titleOnGoingJourney}}</strong></h3>
+            <!--    En lista över pågående resor som ännu inte blivit komplett sparade.
+                    Så fort dem sparats korrekt och komplett så ska dem försvinna från listan. -->
+            <!--    Det kan hända ett en förare glömmer bort att ange t.ex. ”Mätarställning, ankomst” vid slutet av en tjänsteresa.
+                    Detta betyder att resans information inte är komplett.
+                    Resor som inte är kompletta ska hamna i en yta på översiktssidan där man tydligt ser den.
+                    Man ska direkt i denna vy kunna komplettera med den saknade informationen och sedan trycka på ”Spara”.
+                    Då ska resan försvinna från ”Pågående resa”. Det ska inte vara möjligt att påbörja en ny resa innan föregående resa har sparats i sin helhet.
+                    Detta för att förhindra datafel i kilometerantal mellan olika resor.
+                -->
+        </div>
+    </div>
+</div>
