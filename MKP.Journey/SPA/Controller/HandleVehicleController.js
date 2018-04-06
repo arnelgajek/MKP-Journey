@@ -3,7 +3,7 @@
     $scope.addNewVehicleTitle = "Lägg till nytt fordon";
     $scope.formData = {};
 
-    var vehicleUrl = "http://localhost:50166/api/vehicle";
+    var vehicleUrl = "http://localhost:53201/api/vehicle";
 
     // Retrieves data from the database:
     $http({

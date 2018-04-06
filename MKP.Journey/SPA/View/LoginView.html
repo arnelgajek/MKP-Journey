@@ -1,34 +1,39 @@
-﻿<div class="center-block" id="newJourneyBox">
+﻿<div class="center-block" id="loginBox">
     <div class="page-header">
         <br />
-        <data-ng-include src="'/SPA/Includes/Menu.PartialView.html'">
-            Menu.PartialView.html
-        </data-ng-include>
-        <h3><strong>{{titleNewJourney}}</strong></h3>
+        <h1><strong>{{titleLogin}}</strong></h1>
     </div>
     <!-- Form Action ska senare kopplas mot SQL! -->
-    <form action="#">
+    <form action="#" name="loginForm">
         <div class="form-group">
-            <!-- Lista med registreringsnummer över tillgängliga bilar. -->
-            <!-- Det fordon man angett som "default" i HandleVehicleView ska visas som första alternativ i dropdown-listan. -->
-            <input type="text" class="form-control" id="vehicleRegNumber" placeholder="ABC123" />
-            <input type="date" class="form-control" id="dateToday">
-            <!-- Det ska inte vara möjligt att registrera en ny resa med ett lägre start-km-värde än föregående resas ankomst-km-värde. -->
-            <input type="text" class="form-control" id="kmStart" placeholder="Mätarställning start...">
-            <input type="text" class="form-control" id="kmStop" placeholder="Mätarställning ankomst...">
-            <!-- kmTotal ska summera kmStart och kmStop per automatik -->
-            <input type="text" class="form-control" id="kmTotal" placeholder="Reslängd km...">
-            <!-- Startadress, HTML5 Geolocation -->
-            <!-- Destinationsadress, HTML5 Geolocation i kombination med Google Maps Reverse Geocoding. -->
-            <!-- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse -->
-            <!-- http://www.w3schools.com/html/html5_geolocation.asp -->
-            <!-- För att en resa ska räknas som komplett måste alla fällt ha fyllts i, förutom ”Anteckningar”. -->
-            <!-- Glyphicon till höger om textfältet ska kunna köra "få tillgång till platsinformation". -->
-            <textarea class="form-control" id="arrend" rows="3" placeholder="Ärende..."></textarea>
-            <textarea class="form-control" id="notes" rows="3" placeholder="Anteckningar..."></textarea>
+            <!--    Validering av följande ska skapas: Format av användarnamnet (e-postadress)
+                    båda fälten (användarnamn & lösenord) ska var ifyllda för att kunna trycka på "Logga in"
+                    en kontroll ska ske i bakgrunden för att se ifall lösenordet är korrekt. -->
+            <input type="email" class="form-control" name="email" placeholder="Användarnamn...">
+            <!-- Behövs detta felmeddelandet? -->
+            <span ng-show="loginForm"></span>
         </div>
-        <button type="submit" id="newJourneyButton" class="btn btn-default"><strong>Spara</strong></button>
-        <br />
-        <br />
+        <div class="form-group">
+            <input type="password" class="form-control" id="passWord" placeholder="Lösenord...">
+        </div>
+        <button type="submit" class="btn btn-default"><strong>Logga in</strong></button>
     </form>
+    <br />
+    <br />
+    <!-- OM DET FINNS TID ÖVER: Länka GLÖMT LÖSENORD till en nya sida som du behöver skapa upp! -->
+    <a href="">Glömt lösenord?</a>
+    <br />
+    <!-- Länka SKAPA NYTT KONTO till en ny sida som du behöver skapa upp! -->
+    <a href="Index.html#!/CreateAccount">Skapa nytt konto.</a>
+    <br />
+    <br />
+    <ul class="pager">
+        <li><a href="Index.html#!/Summary">Översikt</a></li>
+        <li><a href="Index.html#!/NewJourney">Registrera Ny Resa</a></li>
+        <li><a href="Index.html#!/Report">Rapport</a></li>
+        <li><a href="Index.html#!/ChatSupport">Support</a></li>
+        <li><a href="Index.html#!/HandleVehicle">Hantera Fordon</a></li>
+        <li><a href="Index.html#!">Logga Ut</a></li>
+    </ul>
+    <br />
 </div>
