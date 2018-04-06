@@ -295,6 +295,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SPA\Controller\" />
+    <Folder Include="SPA\Images\" />
+    <Folder Include="SPA\Includes\" />
+    <Folder Include="SPA\Less\" />
+    <Folder Include="SPA\View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
