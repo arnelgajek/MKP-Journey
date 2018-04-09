@@ -8,18 +8,24 @@
         <h3><strong>{{titleChatSupport}}</strong></h3>
     </div>
 
+
     <style type="text/css">
         .chatBox {
-            background-color: #99CCFF;
-            border: thick solid #808080;
+            background-color: green;
+            border: thick solid black;
             padding: 20px;
             margin: 20px;
         }
+
+        ul, li {
+            list-style: none !important;
+            text-align: left;
+        }
     </style>
 
-    <div class="chatBox">
+    <div class=" center-block chatBox">
         <input type="text" id="message" />
-        <input type="button" id="sendmessage" value="Send" />
+        <input type="button" id="sendmessage" value="Send" btn btn-success />
         <input type="hidden" id="displayname" />
         <ul id="discussion"></ul>
     </div>
