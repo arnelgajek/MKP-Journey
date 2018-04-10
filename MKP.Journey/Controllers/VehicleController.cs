@@ -12,6 +12,7 @@ namespace Journey.Controllers
 {
     public class VehicleController : ApiController
     {
+
         private DefaultDataContext db = new DefaultDataContext();
 
         [HttpGet]

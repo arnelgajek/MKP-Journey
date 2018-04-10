@@ -9,7 +9,7 @@
         <!--<h1><strong>{{titleWelcome}}</strong></h1>-->
     </div>
     <!-- Submit-button for quick access to start a new journey: -->
-    <a href="Index.html#!/NewJourney" id="newJourney" class="btn btn-default" role="button"><strong>Ny Resa</strong></a>
+    <a href="Index.html#!/NewJourney" id="newJourney" class="btn btn-success" role="button"><strong>Ny Resa</strong></a>
     <div class="center-block" id="onGoingJourneyBox">
         <div class="page-header">
             <h3><strong>{{titleOnGoingJourney}}</strong></h3>
@@ -24,4 +24,9 @@
                 -->
         </div>
     </div>
+    <form data-ng-submit="signOutAccount()">
+        <button type="submit" data-ng-click="signOut" id="signOut" class="btn btn-danger">Logga ut</button>
+    </form>
+        <br />
+        <br />
 </div>
