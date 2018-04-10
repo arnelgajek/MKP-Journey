@@ -8,8 +8,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using MKP.Journey.Providers;
 using MKP.Journey.Models;
+using MKP.Journey.Providers;
 
 namespace MKP.Journey
 {

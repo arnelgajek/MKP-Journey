@@ -1,5 +1,7 @@
 ﻿app.controller('LoginController', function ($scope) {
     $scope.titleLogin = "Journey";
+
+    // login = api/Account
 });
 
 // Logga in:
