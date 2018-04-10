@@ -21,7 +21,7 @@ namespace MKP.Journey.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Journey", throwIfV1Schema: false)
         {
         }
         
