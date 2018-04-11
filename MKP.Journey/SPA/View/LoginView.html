@@ -3,20 +3,16 @@
         <br />
         <h1><strong>{{titleLogin}}</strong></h1>
     </div>
-    <!-- Form Action ska senare kopplas mot SQL! -->
     <form data-ng-submit="loginForm">
         <div class="form-group">
             <!--    Validering av följande ska skapas: Format av användarnamnet (e-postadress)
-                    båda fälten (användarnamn & lösenord) ska var ifyllda för att kunna trycka på "Logga in"
-                    en kontroll ska ske i bakgrunden för att se ifall lösenordet är korrekt. -->
+    båda fälten (användarnamn & lösenord) ska var ifyllda för att kunna trycka på "Logga in"
+    en kontroll ska ske i bakgrunden för att se ifall lösenordet är korrekt. -->
             <input type="email" class="form-control" name="email" placeholder="Användarnamn...">
-            <!-- Behövs detta felmeddelandet? -->
-            <span ng-show="loginForm"></span>
-        </div>
-        <div class="form-group">
             <input type="password" class="form-control" id="passWord" placeholder="Lösenord...">
+            <br />
+            <button type="submit" class="btn btn-default"><strong>Logga in</strong></button>
         </div>
-        <button type="submit" class="btn btn-default"><strong>Logga in</strong></button>
     </form>
     <br />
     <br />
