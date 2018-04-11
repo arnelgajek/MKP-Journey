@@ -28,12 +28,11 @@ namespace MKP.Journey
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                // GLÖM INTE ATT ÄNDRA TILLBAKA DESSA TILL TRUE SEN:
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = false,
-                RequireDigit = false,
-                RequireLowercase = false,
-                RequireUppercase = false,
+                RequireNonLetterOrDigit = true,
+                RequireDigit = true,
+                RequireLowercase = true,
+                RequireUppercase = true,
             };
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)

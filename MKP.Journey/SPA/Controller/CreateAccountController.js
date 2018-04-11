@@ -1,6 +1,6 @@
 ﻿app.controller('CreateAccountController', function ($scope, $http, $route) {
     $scope.titleCreateAccount = "Skapa konto";
-    $scope.createAccountData = {};
+    //$scope.createAccountData = {};
 
     var accountUrl = "http://localhost:53201/api/Account/Register";
 
@@ -16,3 +16,5 @@
         });
     };
 });
+
+// GLÖM INTE LÄGGA REDIRECT TO STARTPAGE EFTER SKAPANDE AV KONTO.

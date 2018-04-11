@@ -3,13 +3,13 @@
         <br />
         <h1><strong>{{titleLogin}}</strong></h1>
     </div>
-    <form data-ng-submit="loginForm">
+    <form data-ng-submit="loginForm(loginData)">
         <div class="form-group">
             <!--    Validering av följande ska skapas: Format av användarnamnet (e-postadress)
-    båda fälten (användarnamn & lösenord) ska var ifyllda för att kunna trycka på "Logga in"
-    en kontroll ska ske i bakgrunden för att se ifall lösenordet är korrekt. -->
-            <input type="email" class="form-control" name="email" placeholder="Användarnamn...">
-            <input type="password" class="form-control" id="passWord" placeholder="Lösenord...">
+            båda fälten (användarnamn & lösenord) ska var ifyllda för att kunna trycka på "Logga in"
+            en kontroll ska ske i bakgrunden för att se ifall lösenordet är korrekt. -->
+            <input type="email" class="form-control" placeholder="Användarnamn:" data-ng-model="loginData.username">
+            <input type="password" class="form-control" placeholder="Lösenord:" data-ng-model="loginData.password">
             <br />
             <button type="submit" class="btn btn-default"><strong>Logga in</strong></button>
         </div>

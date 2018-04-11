@@ -31,5 +31,8 @@ app.config(
             .when("/ChatSupport", {
                 templateUrl: "/SPA/View/ChatSupportView.html",
                 controller: 'ChatSupportController'
+            })
+            .otherwise({
+                redirectTo: "/"
             });
-    });
+});
