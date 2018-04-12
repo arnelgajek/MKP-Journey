@@ -11,7 +11,9 @@
 
         loginData.token = response.data.access_token;
 
-        }, function (error, status) {
+        }).then(function (data) {
+            $location.href('/Summary');
+        }, function (error) {
             console.log(error);
         });
     };
