@@ -1,10 +1,11 @@
 ﻿<data-ng-include src="'/SPA/Includes/Menu.PartialView.html'">
         <!--Menu.PartialView.html-->
 </data-ng-include>
-    <div class="page-header">
-        <br />
-        <h3><strong>{{titleHandleVehicle}}</strong></h3>
-    </div>
+
+<div class="page-header">
+    <br />
+    <h3><strong>{{titleHandleVehicle}}</strong></h3>
+</div>
     <div id="accordion">
         <div class="card" data-ng-repeat="vehicle in vehicles">
             <div class="card-header" id="headingOne">
@@ -16,8 +17,11 @@
             </div>
             <div id="{{vehicle.RegNumber}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
+                    <!-- Aktivera ett fordon -->
                     <button type="submit" data-ng-click="activeVehicle" class="btn btn-success btn-xs">Aktivera</button>
+                    <!-- Inaktivera ett fordon – Detta innebär att den inte kommer dyka upp i några dropdown-listor -->
                     <button type="submit" data-ng-click="inactiveVehicle" class="btn btn-warning btn-xs">Inaktivera</button>
+                    <!-- Ange ett fordon som standard/förvalsfordon -->
                     <button type="submit" data-ng-click="standardVehicle" class="btn btn-secondary btn-xs">Standardfordon</button>
                     <button type="button" data-ng-click="deleteVehicle(vehicle)" class="btn btn-danger btn-xs">Ta bort</button>
                 </div>
@@ -31,10 +35,3 @@
         <br />
         <button type="submit" class="btn btn-default"><strong>Lägg till</strong></button>
     </form>
-    <!--
-    • Ange ett fordon som standard/förvalsfordon
-    • Aktivera ett fordon
-    • Inaktivera ett fordon – Detta innebär att den inte kommer dyka upp i några dropdown-listor.
-    -->
-    <br />
-    <br />
