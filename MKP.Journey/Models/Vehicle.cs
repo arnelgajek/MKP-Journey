@@ -12,5 +12,7 @@ namespace MKP.Journey.Models
         public string RegNumber { get; set; }
 
         public bool Active { get; set; }
+
+        public bool StandardVehicle { get; set; }
     }
 }
