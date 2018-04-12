@@ -1,4 +1,4 @@
-﻿app.controller('CreateAccountController', function ($scope, $http, $route) {
+﻿app.controller('CreateAccountController', function ($scope, $http, $route, $location) {
     $scope.titleCreateAccount = "Skapa konto";
     //$scope.createAccountData = {};
 
@@ -11,7 +11,9 @@
             url: accountUrl,
             data: $.param($scope.createAccountData),  // Passes in the data as a string.
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // Set the headers so Angular passing info as form data (not request payload)
-        }).then(function (error) {
+        }).then(function (data) {
+            $location.href('/');
+        }, function (error) {
             console.log(error);
         });
     };
