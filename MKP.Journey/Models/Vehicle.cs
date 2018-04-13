@@ -13,6 +13,8 @@ namespace MKP.Journey.Models
 
         public bool Active { get; set; }
 
+        public bool Inactive { get; set; }
+
         public bool StandardVehicle { get; set; }
     }
 }

@@ -18,11 +18,11 @@
             <div id="{{vehicle.RegNumber}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     <!-- Aktivera ett fordon -->
-                    <button type="submit" data-ng-click="activeVehicle" class="btn btn-success btn-xs">Aktivera</button>
+                    <button type="button" data-ng-click="activeVehicle(vehicle)" class="btn btn-success btn-xs">Aktivera</button>
                     <!-- Inaktivera ett fordon – Detta innebär att den inte kommer dyka upp i några dropdown-listor -->
-                    <button type="submit" data-ng-click="inactiveVehicle" class="btn btn-warning btn-xs">Inaktivera</button>
+                    <button type="button" data-ng-click="inactiveVehicle(vehicle)" class="btn btn-warning btn-xs">Inaktivera</button>
                     <!-- Ange ett fordon som standard/förvalsfordon -->
-                    <button type="submit" data-ng-click="standardVehicle" class="btn btn-secondary btn-xs">Standardfordon</button>
+                    <button type="button" data-ng-click="standardVehicle(vehicle)" class="btn btn-secondary btn-xs">Standardfordon</button>
                     <button type="button" data-ng-click="deleteVehicle(vehicle)" class="btn btn-danger btn-xs">Ta bort</button>
                 </div>
             </div>

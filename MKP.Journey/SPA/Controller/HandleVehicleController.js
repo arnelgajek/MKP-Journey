@@ -44,12 +44,33 @@
     };
 
     // Set status Activate on vehicle from the database:
-    //$scope.activeVehicle = function () {
+    //$scope.activeVehicle = function (vehicle) {
+    //$http({
+    //    method: 'PUT',
+    //    url: vehicleUrl + '/' + vehicle.VehicleId
+    //}).then(function (data) {
+    //    if (vehicle.activeVehicle === false) {
+    //        vehicle.activeVehicle = true;
+    //    }
+    //    if (vehicle.activeVehicle === true) {
+    //        vehicle.activeVehicle = false;
+    //    }
+    //})
+    //    // Reloads the page after updating a vehicle from the database:
+    //    .then(function (data) {
+    //        console.log(data);
+    //        $route.reload();
+    //    });
 
     //};
 
     // Set status Inactive on vehcile from the database:
     //$scope.inactiveVehicle = function () {
+
+    //};
+
+    // Set status StandardVehicle on vehcile from the database:
+        //$scope.standardVehicle = function () {
 
     //};
 });
