@@ -1,4 +1,4 @@
-﻿app.controller('LoginController', function ($scope, $http, $route) {
+﻿app.controller('LoginController', function ($scope, $http, $route, $location, $window) {
     $scope.titleLogin = "Journey";
 
     var loginData = this;
@@ -12,7 +12,7 @@
         loginData.token = response.data.access_token;
 
         }).then(function (data) {
-            $location.href('/Summary');
+            $location.url('/Summary');
         }, function (error) {
             console.log(error);
         });

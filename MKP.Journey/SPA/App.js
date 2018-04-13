@@ -1,6 +1,6 @@
 ﻿var app = angular.module("app", ['ngRoute']);
 
-app.config(
+app.config(['$routeProvider',
 
     function ($routeProvider) {
         $routeProvider
@@ -35,4 +35,4 @@ app.config(
             .otherwise({
                 redirectTo: "/"
             });
-});
+}]);
