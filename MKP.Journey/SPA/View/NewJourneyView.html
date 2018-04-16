@@ -7,17 +7,17 @@
         <h3><strong>{{titleNewJourney}}</strong></h3>
     </div>
     <!-- Form Action ska senare kopplas mot SQL! -->
-    <form data-ng-submit="newJourney">
+    <form data-ng-submit="newJourney()">
         <div class="form-group">
             <!-- Lista med registreringsnummer över tillgängliga bilar. -->
             <!-- Det fordon man angett som "default" i HandleVehicleView ska visas som första alternativ i dropdown-listan. -->
             <input type="text" class="form-control" id="vehicleRegNumber" placeholder="ABC123" required/>
             <input type="date" class="form-control" id="dateToday" required>
             <!-- Det ska inte vara möjligt att registrera en ny resa med ett lägre start-km-värde än föregående resas ankomst-km-värde. -->
-            <input type="text" class="form-control" id="kmStart" placeholder="Mätarställning start..." required>
-            <input type="text" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." required>
+            <input type="number" class="form-control" id="kmStart" placeholder="Mätarställning start..." required>
+            <input type="number" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." required>
             <!-- kmTotal ska summera kmStart och kmStop per automatik -->
-            <input type="text" class="form-control" id="kmTotal" placeholder="Reslängd km..." required>
+            <input type="number" class="form-control" id="kmTotal" placeholder="Reslängd km..." required>
             <!-- Startadress, HTML5 Geolocation -->
             <!-- Destinationsadress, HTML5 Geolocation i kombination med Google Maps Reverse Geocoding. -->
             <!-- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse -->
