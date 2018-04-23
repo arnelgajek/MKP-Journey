@@ -10,6 +10,7 @@ using System.Data.Entity;
 
 namespace Journey.Controllers
 {
+    //[Authorize] Genom aktivering av denna så låser man tillgången till API för vehicle:
     public class VehicleController : ApiController
     {
 

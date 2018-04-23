@@ -1100,6 +1100,7 @@
     <Content Include="SPA\Controller\HandleVehicleController.js" />
     <Content Include="SPA\Controller\JourneyReportController.js" />
     <Content Include="SPA\Controller\LoginController.js" />
+    <Content Include="SPA\Controller\LogutController.js" />
     <Content Include="SPA\Controller\NewJourneyController.js" />
     <Content Include="SPA\Controller\SummaryController.js" />
     <Content Include="SPA\Images\backgroundImage.jpeg" />
