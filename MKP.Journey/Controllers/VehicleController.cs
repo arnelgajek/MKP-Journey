@@ -35,22 +35,27 @@ namespace Journey.Controllers
             }, vehicle);
         }
 
-        [HttpPut]
-        public IHttpActionResult PutVehicle(Vehicle vehicle)
+        public HttpResponseMessage Put(int id, [FromBody]Vehicle vehicle)
         {
-            if (!db.Vehicles.Any(v => v.VehicleId.Equals(vehicle.VehicleId)))
+            try
             {
-                return NotFound();
+                var setStatus = db.Vehicles.FirstOrDefault(x => x.VehicleId == id);
+
+                if (setStatus == null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Vehicle with id = " + id.ToString() + "not found to update");
+                }
+                else
+                {
+                    setStatus.Status = vehicle.Status;
+                    db.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK, setStatus);
+                }
             }
-
-            db.Entry(vehicle).State = EntityState.Modified;
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new
+            catch (Exception ex)
             {
-                controller = "Vehicle",
-                id = vehicle.VehicleId
-            }, vehicle);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
         }
 
         [HttpDelete]

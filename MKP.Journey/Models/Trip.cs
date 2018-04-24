@@ -5,17 +5,15 @@ using System.Web;
 
 namespace MKP.Journey.Models
 {
-    public class Journey
+    public class Trip
     {
-        public int JourneyId { get; set; }
+        public int TripId { get; set; }
 
         public DateTime Date { get; set; }
 
         public int KmStart { get; set; }
 
         public int KmStop { get; set; }
-
-        // public int KmTotal { get; set; } Behövs ej då den räknas ihop med KmStart + KmStop
 
         public string StartAddress { get; set; }
 

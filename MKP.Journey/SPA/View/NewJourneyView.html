@@ -6,29 +6,29 @@
     <div class="page-header">
         <h3><strong>{{titleNewJourney}}</strong></h3>
     </div>
-    <!-- Form Action ska senare kopplas mot SQL! -->
-    <form data-ng-submit="newJourney()">
+    <form data-ng-submit="newTrip()">
         <div class="form-group">
             <!-- Lista med registreringsnummer över tillgängliga bilar. -->
             <!-- Det fordon man angett som "default" i HandleVehicleView ska visas som första alternativ i dropdown-listan. -->
-            <input type="text" class="form-control" id="vehicleRegNumber" placeholder="ABC123" required/>
-            <input type="date" class="form-control" id="dateToday" required>
+            <!--<input type="text" class="form-control" id="vehicleRegNumber" placeholder="ABC123" data-ng-model="trip.regNumber" />-->
+            <input type="date" class="form-control" id="dateToday" data-ng-model="trip.date">
             <!-- Det ska inte vara möjligt att registrera en ny resa med ett lägre start-km-värde än föregående resas ankomst-km-värde. -->
-            <input type="number" class="form-control" id="kmStart" placeholder="Mätarställning start..." required>
-            <input type="number" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." required>
-            <!-- kmTotal ska summera kmStart och kmStop per automatik -->
-            <input type="number" class="form-control" id="kmTotal" placeholder="Reslängd km..." required>
-            <!-- Startadress, HTML5 Geolocation -->
-            <!-- Destinationsadress, HTML5 Geolocation i kombination med Google Maps Reverse Geocoding. -->
-            <!-- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse -->
-            <!-- http://www.w3schools.com/html/html5_geolocation.asp -->
-            <!-- För att en resa ska räknas som komplett måste alla fällt ha fyllts i, förutom ”Anteckningar”. -->
-            <!-- Glyphicon till höger om textfältet ska kunna köra "få tillgång till platsinformation". -->
-            <textarea class="form-control" id="arrend" rows="3" placeholder="Ärende..." required></textarea>
-            <textarea class="form-control" id="notes" rows="3" placeholder="Anteckningar..."></textarea>
+            <input type="number" class="form-control" id="kmStart" placeholder="Mätarställning start..." data-ng-model="trip.kmStart">
+            <input type="number" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." data-ng-model="trip.kmStop">
+            <input type="number" class="form-control" id="kmTotal" placeholder="{{trip.kmStop - trip.kmStart}}" data-ng-model="trip.kmTotal">
+            <input type="text" class="form-control" id="startAddress" placeholder="Startadress.." data-ng-model="trip.startAddress" />
+            <button class="geoButton pull-right" data-ng-click="getStartLocation()"><span class="glyphicon glyphicon-map-marker"></span></button>
+            <input type="text" class="form-control" id="destinationAddress" placeholder="Destinationsadress.." data-ng-model="trip.stopAddress" />
+            <button class="geoButton pull-right" data-ng-click="getStopLocation()"><span class="glyphicon glyphicon-map-marker"></span></button>
+            <textarea class="form-control" id="arrend" rows="3" placeholder="Ärende..." data-ng-model="trip.arrend"></textarea>
+            <textarea class="form-control" id="notes" rows="3" placeholder="Anteckningar..." data-ng-model="trip.notes"></textarea>
         </div>
         <button type="submit" id="newJourneyButton" class="btn btn-default"><strong>Spara</strong></button>
         <br />
         <br />
     </form>
 </div>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Y7zcrFXRtq6Tt4rExw1GQnanvfAj9Kg">
+</script>
