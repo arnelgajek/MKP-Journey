@@ -9,7 +9,8 @@
         var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password;
         $http.post('/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (response) {
 
-        loginData.token = response.data.access_token;
+            loginData.token = response.data.access_token;
+            localStorage.setItem("bearer", loginData.token);
 
         }).then(function (data) {
             $location.url('/Summary');

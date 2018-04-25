@@ -1,6 +1,10 @@
 ﻿app.controller('NewJourneyController', function ($scope, $http, $route, $location) {
     $scope.titleNewJourney = "Registrera ny resa";
     $scope.formData = {};
+    $scope.trip = {
+        startAddress: '',
+        stopDestination: ''
+    };
 
     var tripUrl = "http://localhost:53201/api/trips";
 
@@ -43,9 +47,9 @@
                 geocoder.geocode({ 'location': latLng }, function (results, status) {
                     if (status === 'OK') {
                         if (results[0]) {
-                            $scope.trip.stopAddress = results[0].formatted_address;
+                            $scope.trip.stopDestination = results[0].formatted_address;
                             $scope.$apply();
-                            console.log($scope.trip.stopAddress);
+                            console.log($scope.trip.stopDestination);
                         } else {
                             console.log("No results found.");
                         }
@@ -60,7 +64,7 @@
         }
     };
 
-    // Post new trip to the database:
+     //Post new trip to the database:
     $scope.newTrip = function (trip) {
         $http({
             method: 'POST',
