@@ -1,4 +1,4 @@
-﻿app.controller('NewJourneyController', function ($scope, $http, $route, $location) {
+﻿app.controller('NewJourneyController', function ($scope, $http, $route, $location, $filter) {
     $scope.titleNewJourney = "Registrera ny resa";
     $scope.formData = {};
     $scope.trip = {
@@ -66,6 +66,7 @@
 
      //Post new trip to the database:
     $scope.newTrip = function (trip) {
+        trip.date = $filter('date')(trip.date, 'yyyy-MM-dd');
         $http({
             method: 'POST',
             url: tripUrl,

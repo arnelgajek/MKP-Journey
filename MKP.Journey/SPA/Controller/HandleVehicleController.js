@@ -6,7 +6,7 @@
 
     var vehicleUrl = "http://localhost:53201/api/vehicle";
 
-    // Retrieves data from the database:
+    // Retrieves vehicles from the database:
     $http({
         method: 'GET',
         url: vehicleUrl

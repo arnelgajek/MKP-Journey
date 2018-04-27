@@ -9,12 +9,15 @@
     <div class="form-group">
         <!-- Lista med registreringsnummer över tillgängliga bilar. -->
         <!-- Det fordon man angett som "default" i HandleVehicleView ska visas som första alternativ i dropdown-listan. -->
-        <!--<input type="text" class="form-control" id="vehicleRegNumber" placeholder="ABC123" data-ng-model="trip.regNumber" />-->
-        <input type="date" class="form-control" id="dateToday" data-ng-model="trip.date">
+
+        <!-- IN MED LISTAN ÖVER VEHICLE HÄR... -->
+
+        <input type="text" class="form-control" placeholder="År Månad Dag" id="datePicked" data-ng-model="trip.date" />
+        <!--<input type="text" class="form-control" id="datePicked" data-ng-model="trip.date" />-->
         <!-- Det ska inte vara möjligt att registrera en ny resa med ett lägre start-km-värde än föregående resas ankomst-km-värde. -->
-        <input type="number" class="form-control" id="kmStart" placeholder="Mätarställning start..." data-ng-model="trip.kmStart">
-        <input type="number" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." data-ng-model="trip.kmStop">
-        <input type="number" class="form-control" id="kmTotal" placeholder="{{trip.kmStop - trip.kmStart}}" data-ng-model="trip.kmTotal">
+        <input type="number" class="form-control" id="kmStart" placeholder="Mätarställning start..." data-ng-model="trip.kmStart" />
+        <input type="number" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." data-ng-model="trip.kmStop" />
+        <input type="number" class="form-control" id="kmTotal" placeholder="{{trip.kmStop - trip.kmStart}}" data-ng-model="trip.kmTotal" />
         <input type="text" class="form-control" placeholder="Startadress.." data-ng-model="trip.startAddress" />
         <button class="geoButton pull-right" data-ng-click="getStartLocation()"><span class="glyphicon glyphicon-map-marker"></span></button>
         <input type="text" class="form-control" id="destinationAddress" placeholder="Destinationsadress.." data-ng-model="trip.stopDestination" />

@@ -9,7 +9,7 @@ namespace MKP.Journey.Models
     {
         public int TripId { get; set; }
 
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
 
         public int KmStart { get; set; }
 
