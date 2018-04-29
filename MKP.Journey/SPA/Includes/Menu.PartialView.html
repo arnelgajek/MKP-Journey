@@ -1,5 +1,5 @@
 ﻿<!-- This is the partial View that handles the menu at all the pages except Login and CreateAccount: -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" data-ng-controller="LogoutController">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -17,7 +17,7 @@
                 <li><a href="Index.html#!/Report">Rapport</a></li>
                 <li><a href="Index.html#!/ChatSupport">Support</a></li>
                 <li><a href="Index.html#!/HandleVehicle">Hantera Fordon</a></li>
-                <li><a data-ng-href data-ng-click="LogOut()">Logga Ut</a></li>
+                <li><a data-ng-href data-ng-model="LogOutData" data-ng-click="LogOut(LogOutData)">Logga Ut</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

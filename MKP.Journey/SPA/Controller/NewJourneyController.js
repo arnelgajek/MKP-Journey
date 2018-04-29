@@ -7,6 +7,20 @@
     };
 
     var tripUrl = "http://localhost:53201/api/trips";
+    var vehicleUrl = "http://localhost:53201/api/vehicle";
+
+    if (localStorage.getItem("bearer") === null) {
+        $location.path('/');
+    }
+
+    // Retrieves vehicles from the database:
+    $http.get(vehicleUrl, {
+        headers: { 'Authorization': 'Bearer ' + localStorage.getItem('bearer') } // Gives you the authorization to get all the vehicles from db.
+    }).then(function (response) {
+        $scope.vehicles = response.data;
+    }, function (error) {
+        console.log(error);
+    });
 
     // START GEOLOCATION:
     $scope.getStartLocation = function () {
@@ -67,6 +81,9 @@
      //Post new trip to the database:
     $scope.newTrip = function (trip) {
         trip.date = $filter('date')(trip.date, 'yyyy-MM-dd');
+
+        //Validation of startKm and stopKm:
+
         $http({
             method: 'POST',
             url: tripUrl,

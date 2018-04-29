@@ -1,8 +1,12 @@
-﻿app.controller('SummaryController', function ($scope, $http, $route) {
+﻿app.controller('SummaryController', function ($scope, $http, $route, $location) {
     //$scope.titleWelcome = "Welcome";
     $scope.titleOnGoingJourney = "Pågående resa:";
 
     //var logOutUrl = "http://localhost:53201/api/Account/LogOut";
+
+    if (localStorage.getItem("bearer") === null) {
+        $location.path('/');
+    }
 
     //$scope.signOutAccount = function () {
     //    $http({

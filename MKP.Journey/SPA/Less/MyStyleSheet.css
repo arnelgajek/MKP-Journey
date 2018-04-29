@@ -23,7 +23,11 @@
   body .loginBox input,
   body .createAccountBox input,
   body .newJourneyBox input,
-  body .summaryBox input {
+  body .summaryBox input,
+  body .loginBox select,
+  body .createAccountBox select,
+  body .newJourneyBox select,
+  body .summaryBox select {
     margin-bottom: 10px;
   }
   body .loginBox textarea,

@@ -1,5 +1,9 @@
 ﻿app.controller('LogoutController', function ($scope, $http, $route, $location, $window) {
 
-    // Logout from your account:
+    // Destroys the bearer-token:
+    $scope.LogOut = function (LogOutData) {
+        localStorage.removeItem("bearer");
+        $location.path('/');
+    };
 
 });

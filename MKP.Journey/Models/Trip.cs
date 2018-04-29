@@ -7,7 +7,7 @@ namespace MKP.Journey.Models
 {
     public class Trip
     {
-        public int TripId { get; set; }
+        public int Id { get; set; }
 
         public string Date { get; set; }
 
@@ -22,6 +22,12 @@ namespace MKP.Journey.Models
         public string Arrend { get; set; }
 
         public string Notes { get; set; }
+
+        public List<Vehicle> Vehicles { get; set; }
+        public Trip()
+        {
+            Vehicles = new List<Vehicle>();
+        }
 
     }
 }

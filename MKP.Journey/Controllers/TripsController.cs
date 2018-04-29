@@ -10,17 +10,28 @@ using System.Web.Http;
 
 namespace MKP.Journey.Controllers
 {
+    //[Authorize]
+    [RoutePrefix("api/trips")]
     public class TripsController : ApiController
     {
 
         private DefaultDataContext db = new DefaultDataContext();
 
+        [Route("")]
         [HttpGet]
-        public IEnumerable<Trip> GetTrips()
+        public IEnumerable<Trip> GetAllTrips()
         {
             return db.Trips;
         }
 
+        [Route("{Id}")]
+        [HttpGet]
+        public Trip GetUniqueTrip(int id)
+        {
+            return db.Trips.FirstOrDefault(t => t.Id == id);
+        }
+
+        [Route("")]
         [HttpPost]
         public IHttpActionResult PostTrips(Trip trip)
         {
@@ -30,7 +41,7 @@ namespace MKP.Journey.Controllers
             return CreatedAtRoute("DefaultApi", new
             {
                 controller = "Trips",
-                id = trip.TripId
+                id = trip.Id
             }, trip);
         }
     }
