@@ -21,12 +21,14 @@ namespace MKP.Journey.Controllers
 
         private DefaultDataContext db = new DefaultDataContext();
 
+        [Route("")]
         public IQueryable<Trip> GetTrips()
         {
             return db.Trips.Include(x => x.Vehicle);
         }
 
         // GET: api/trips/5
+        [Route("{Id}")]
         [ResponseType(typeof(Trip))]
         public async Task<IHttpActionResult> GetTrip(int id)
         {
@@ -40,6 +42,7 @@ namespace MKP.Journey.Controllers
         }
 
         // PUT: api/trips/5
+        [Route("")]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutTrip(int id, Trip trip)
         {

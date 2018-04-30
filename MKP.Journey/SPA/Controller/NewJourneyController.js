@@ -78,11 +78,9 @@
         }
     };
 
-     //Post new trip to the database:
+     //Post new trip with values that has been entered to the database:
     $scope.newTrip = function (trip) {
         trip.date = $filter('date')(trip.date, 'yyyy-MM-dd');
-
-        //Validation of startKm and stopKm:
 
         $http({
             method: 'POST',
