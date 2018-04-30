@@ -7,13 +7,13 @@ namespace MKP.Journey.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class updatedatabase : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804241213217_update-database"; }
+            get { return "201804301135141_Initial-Create"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,24 +7,8 @@
         <h3><strong>{{titleNewJourney}}</strong></h3>
     </div>
     <div class="form-group">
-        <!-- Lista med registreringsnummer över tillgängliga bilar. -->
-        <!-- Det fordon man angett som "default" i HandleVehicleView ska visas som första alternativ i dropdown-listan. -->
         <!-- IN MED LISTAN ÖVER VEHICLE HÄR... -->
-        <!--<select class="form-control" name="vehicles" data-ng-model="trip.vehicle" required data-ng-options="vehicle.RegNumber as vehicle.RegNumber for vehicle in vehicles"></select>-->
-        <div id="accordion">
-            <div class="card" data-ng-repeat="vehicle in vehicles">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#{{vehicle.RegNumber}}" aria-expanded="true" aria-controls="collapseOne">
-                            <strong>{{vehicle.RegNumber}}</strong>
-                        </button>
-                    </h5>
-                </div>
-                <div id="{{vehicle.RegNumber}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                </div>
-            </div>
-        </div>
-
+        <select class="form-control" name="vehicles" data-ng-model="trip.vehicle" data-ng-options="vehicle.RegNumber for vehicle in vehicles | filter: {Status: 1}"></select>
         <input type="text" class="form-control" placeholder="År-Månad-Dag" id="datePicked" data-ng-model="trip.date" />
         <!--<input type="text" class="form-control" id="datePicked" data-ng-model="trip.date" />--> <!-- Fungerar inte riktigt som den ska... -->
         <!-- Det ska inte vara möjligt att registrera en ny resa med ett lägre start-km-värde än föregående resas ankomst-km-värde. -->

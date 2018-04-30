@@ -235,9 +235,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Migrations\201804241213217_update-database.cs" />
-    <Compile Include="Migrations\201804241213217_update-database.Designer.cs">
-      <DependentUpon>201804241213217_update-database.cs</DependentUpon>
+    <Compile Include="Migrations\201804301135141_Initial-Create.cs" />
+    <Compile Include="Migrations\201804301135141_Initial-Create.Designer.cs">
+      <DependentUpon>201804301135141_Initial-Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Status.cs" />
@@ -1148,8 +1148,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804241213217_update-database.resx">
-      <DependentUpon>201804241213217_update-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804301135141_Initial-Create.resx">
+      <DependentUpon>201804301135141_Initial-Create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

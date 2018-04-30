@@ -23,11 +23,10 @@ namespace MKP.Journey.Models
 
         public string Notes { get; set; }
 
-        public List<Vehicle> Vehicles { get; set; }
-        public Trip()
-        {
-            Vehicles = new List<Vehicle>();
-        }
+        // Foreign Key:
+        public int VehicleId { get; set; }
 
+        // Navigation Property:
+        public Vehicle Vehicle { get; set; }
     }
 }

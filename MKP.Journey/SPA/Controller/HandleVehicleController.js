@@ -51,6 +51,18 @@
      //Set status Activate on vehicle from the database:
     $scope.setStatus = function (vehicle) {
 
+            // Fordonstatus:
+            if (vehicle.Status === 0) {
+                vehicle.Status = 1;
+                //vehicleStatus.isDisabled = true;
+                //$scope.vehicleBtnName[1] = 'Inactivate';
+            } else {
+                vehicle.Status = 0;
+                //vehicleStatus.isDisabled = false;
+                //$scope.vehicleBtnName[1] = 'Activate';
+            }
+
+
             // Send the value (true/false) to the API:
             $http({
                 method: 'PUT',
@@ -58,17 +70,6 @@
                 data: vehicle,
                 headers: {
                     'Content-Type': 'application/json'
-                }
-            }).then(function (data) {
-                if (vehicle.Status === 0) {
-                    vehicle.Status = 1;
-                    vehicle.disableOrNot = false;
-                    $scope.statusButton = 'Inactivate';
-                } else {
-                    vehicle.Status = 0;
-                    vehicle.disableOrNot = true;
-                    $scope.statusButton = 'Activate';
-                    
                 }
             });
             console.log(vehicle);

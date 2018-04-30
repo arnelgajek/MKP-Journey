@@ -17,9 +17,9 @@
             </div>
             <div id="{{vehicle.RegNumber}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
-                    <button type="button" data-ng-click="setStatus(vehicle)" class="btn btn-success btn-xs" data-ng-model="vehicle.disableOrNot">{{statusButton}}</button>
-                    <button type="button" data-ng-click="standardVehicle(vehicle)" class="btn btn-secondary btn-xs" data-ng-disabled="vehicle.disableOrNot">Standardfordon</button>
-                    <button type="button" data-ng-click="deleteVehicle(vehicle)" class="btn btn-danger btn-xs" data-ng-disabled="vehicle.disableOrNot">Ta bort</button>
+                    <button type="button" class="btn btn-success btn-sm" ng-click="standardVehicle(vehicle)" ng-disabled="vehicle.Status == 0">Standardfordon</button>
+                    <button type="button" class="btn btn-warning btn-sm" ng-click="setStatus(vehicle)" ng-model="vehicle.Status">{{vehicle.Status == 1 ? 'Inaktivera' : 'Aktivera'}}</button>
+                    <button type="button" class="btn btn-danger btn-sm" ng-click="deleteVehicle(vehicle)" ng-disabled="vehicle.Status == 0">Ta bort</button>
                 </div>
             </div>
         </div>

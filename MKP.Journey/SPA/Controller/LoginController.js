@@ -1,6 +1,10 @@
 ﻿app.controller('LoginController', function ($scope, $http, $route, $location, $window) {
     $scope.titleLogin = "Journey";
 
+    if (localStorage.getItem("bearer")) {
+        $location.path('/Summary');
+    }
+
     var loginData = this;
     loginData.token = "";
 
