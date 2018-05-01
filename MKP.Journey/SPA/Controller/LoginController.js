@@ -1,6 +1,7 @@
 ﻿app.controller('LoginController', function ($scope, $http, $route, $location, $window) {
     $scope.titleLogin = "Journey";
 
+    // If the token is still active, user will be sent to /Summary:
     if (localStorage.getItem("bearer")) {
         $location.path('/Summary');
     }
@@ -23,6 +24,3 @@
         });
     };
 });
-
-// Glömt lösenord:
-// Ej obligatoriskt, gör detta om det finns tid över.

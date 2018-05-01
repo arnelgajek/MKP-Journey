@@ -11,12 +11,13 @@ namespace MKP.Journey
     {
         public void Send(string name, string message)
         {
-            Clients.All.broadcastMessage(name, message);
+            Clients.Caller.message(name + ": " + message);
+            Clients.Others.othersMessage(name + ": " + message);
         }
 
         public override Task OnConnected()
         {
-            var connectionId = Context.ConnectionId;
+            Clients.All.user(Context.User.Identity.Name);
             return base.OnConnected();
         }
 

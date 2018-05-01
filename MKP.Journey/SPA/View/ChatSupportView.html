@@ -9,6 +9,11 @@
 <!-- Chat-styling: -->
 <style type="text/css">
 
+    #discussion {
+        margin-top: 10px;
+
+    }
+
     ul li {
         list-style: none;
         text-align: left;
@@ -21,6 +26,7 @@
     <input type="button" id="sendmessage" value="Send" />
     <input type="hidden" id="displayname" />
     <ul id="discussion"></ul>
+    <input type="hidden" id="displayname" />
 </div>
 <!--Script references. -->
 
@@ -36,6 +42,21 @@
     $(function () {
         // Declare a proxy to reference the hub.
         var chat = $.connection.chatHub;
+
+        // You:
+        chat.client.message = function (message, name) {
+            var encodedMsg = $('<div />').text(message).html();
+            var encodedName = $('<div />').text(name).html();
+            $('#discussion').append('<li>' + encodedName + encodedMsg + '</li>');
+        };
+
+        // The other user:
+        chat.client.othersMessage = function (message, name) {
+            var encodedMsg = $('<div />').text(message).html();
+            var encodedName = $('<div />').text(name).html();
+            $('#discussion').append('<li>' + encodedName + encodedMsg + '</li>');
+        };
+
         // Create a function that the hub can call to broadcast messages.
         chat.client.broadcastMessage = function (name, message) {
             // Html encode display name and message.
