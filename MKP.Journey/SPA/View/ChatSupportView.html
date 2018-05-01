@@ -1,19 +1,13 @@
 ﻿<data-ng-include src="'/SPA/Includes/Menu.PartialView.html'">
     Menu.PartialView.html
 </data-ng-include>
-
 <div class="page-header">
     <br />
     <h3><strong>{{titleChatSupport}}</strong></h3>
 </div>
 
+<!-- Chat-styling: -->
 <style type="text/css">
-
-    #discussion {
-        height: 100px;
-        background: red;
-        border: dashed;
-    }
 
     ul li {
         list-style: none;
@@ -21,13 +15,13 @@
     }
 </style>
 
-<ul id="discussion">
-</ul>
-
-<input type="text" id="message" />
-<input type="button" id="sendmessage" value="Send" class="btn btn-default" />
-<input type="hidden" id="displayname" />
-
+<!-- Chat-structure: -->
+<div class="container">
+    <input type="text" id="message" />
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+    <ul id="discussion"></ul>
+</div>
 <!--Script references. -->
 
 <!--Reference the SignalR library. -->

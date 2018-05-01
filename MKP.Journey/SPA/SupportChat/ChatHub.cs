@@ -11,7 +11,7 @@ namespace MKP.Journey
     {
         public void Send(string name, string message)
         {
-            Clients.All.broadcast(name, message);
+            Clients.All.broadcastMessage(name, message);
         }
 
         public override Task OnConnected()
