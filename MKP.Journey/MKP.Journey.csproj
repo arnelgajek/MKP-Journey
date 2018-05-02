@@ -1140,6 +1140,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="PDF_iTextSharp\Helpers\" />
+    <Folder Include="PDF_iTextSharp\Models\" />
+    <Folder Include="PDF_iTextSharp\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
