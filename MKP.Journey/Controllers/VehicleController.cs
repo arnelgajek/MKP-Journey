@@ -93,6 +93,7 @@ namespace Journey.Controllers
         }
 
         // DELETE: api/vehicle/5
+        [Route("{Id}")]
         [ResponseType(typeof(Vehicle))]
         public async Task<IHttpActionResult> DeleteVehicle(int id)
         {

@@ -7,10 +7,8 @@
         <h3><strong>{{titleNewJourney}}</strong></h3>
     </div>
     <div class="form-group">
-        <!-- IN MED LISTAN ÖVER VEHICLE HÄR... -->
         <select class="form-control" id="regNumber" data-ng-model="trip.VehicleId" data-ng-options="vehicle.Id as vehicle.RegNumber for vehicle in vehicles | filter: {Status: 1}"></select>
         <input type="text" class="form-control" placeholder="År-Månad-Dag" id="datePicked" data-ng-model="trip.date" />
-        <!--<input type="text" class="form-control" id="datePicked" data-ng-model="trip.date" />--> <!-- Fungerar inte riktigt som den ska... -->
         <!-- Det ska inte vara möjligt att registrera en ny resa med ett lägre start-km-värde än föregående resas ankomst-km-värde. -->
         <input type="number" class="form-control" id="kmStart" placeholder="Mätarställning start..." data-ng-model="trip.kmStart" />
         <input type="number" class="form-control" id="kmStop" placeholder="Mätarställning ankomst..." data-ng-model="trip.kmStop" />
