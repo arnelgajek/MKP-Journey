@@ -39,7 +39,11 @@
     $scope.deleteVehicle = function (vehicle) {
         $http({
             method: 'DELETE',
-            url: vehicleUrl + '/' + vehicle.Id
+            url: vehicleUrl + '/' + vehicle.Id,
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('bearer')
+            }
         })
             // Reloads the page after deleting a vehicle from the database:
             .then(function (data) {
@@ -64,7 +68,8 @@
                 url: vehicleUrl + '/' + vehicle.Id,
                 data: vehicle,
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('bearer')
                 }
             });
             console.log(vehicle);

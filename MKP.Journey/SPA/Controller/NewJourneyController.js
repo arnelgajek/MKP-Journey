@@ -86,7 +86,10 @@
             method: 'POST',
             url: tripUrl,
             data: $.param($scope.trip),  // Passes in the data as a string.
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // Set the headers so Angular passing info as form data (not request payload)
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + localStorage.getItem('bearer')
+            }
         })
              //Reloads the page after posting a new trip to the database:
             .then(function (data) {
