@@ -14,7 +14,7 @@ using System.Web.Http.Description;
 
 namespace MKP.Journey.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [RoutePrefix("api/trips")]
     public class TripsController : ApiController
     {
