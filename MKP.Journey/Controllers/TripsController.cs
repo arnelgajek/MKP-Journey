@@ -123,33 +123,5 @@ namespace MKP.Journey.Controllers
             return db.Trips.Count(e => e.Id == id) > 0;
         }
     }
-
-    //[Route("")]
-    //[HttpGet]
-    //public IEnumerable<Trip> GetAllTrips()
-    //{
-    //    return db.Trips;
-    //}
-
-    //[Route("{Id}")]
-    //[HttpGet]
-    //public Trip GetUniqueTrip(int id)
-    //{
-    //    return db.Trips.FirstOrDefault(t => t.Id == id);
-    //}
-
-    //[Route("")]
-    //[HttpPost]
-    //public IHttpActionResult PostTrips(Trip trip)
-    //{
-    //    db.Trips.Add(trip);
-    //    db.SaveChanges();
-
-    //    return CreatedAtRoute("DefaultApi", new
-    //    {
-    //        controller = "Trips",
-    //        id = trip.Id
-    //    }, trip);
-    //}
 }
 
