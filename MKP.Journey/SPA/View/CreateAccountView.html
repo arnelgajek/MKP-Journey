@@ -6,13 +6,10 @@
 <div class="createAccountBox">
     <form data-ng-submit="createAccount()">
         <div class="form-group">
-            <!--<input type="text" class="form-control" placeholder="Förnamn:" name="firstName" data-ng-model="createAccountData.firstName" required>
-            <input type="text" class="form-control" placeholder="Efternamn:" name="lastName" data-ng-model="createAccountData.lastName" required>-->
             <input type="email" class="form-control" placeholder="Mailadress:" name="email" data-ng-model="createAccountData.email" required>
             <input type="password" class="form-control" placeholder="Lösenord:" name="password" data-ng-model="createAccountData.password" required>
             <input type="password" class="form-control" placeholder="Upprepa lösenord:" name="confirmPassword" data-ng-model="createAccountData.confirmPassword" required>
             <br />
-            <!-- Submit-button that send the data to the database: -->
             <button type="submit" class="btn btn-default"><strong>Godkänn</strong></button>
             <br />
             <br />
