@@ -1,6 +1,5 @@
 ﻿app.controller('CreateAccountController', function ($scope, $http, $route, $location) {
     $scope.titleCreateAccount = "Skapa konto";
-    //$scope.createAccountData = {};
 
     var accountUrl = "http://localhost:53201/api/Account/Register";
 
