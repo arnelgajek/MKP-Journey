@@ -16,7 +16,6 @@ namespace MKP.Journey.DataAccess
 
         public DbSet<Trip> Trips { get; set; }
 
-        // Händelsehanterare för hur Entity Framework ska fungera:
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
