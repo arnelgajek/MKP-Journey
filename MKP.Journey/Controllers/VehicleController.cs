@@ -45,6 +45,12 @@ namespace Journey.Controllers
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutVehicle(int id, Vehicle vehicle)
         {
+            if (vehicle.StandardVehicle == true)
+            {
+                List<Vehicle> vehicles = db.Vehicles.Where(x => x.StandardVehicle == true).ToList();
+                vehicles.Select(x => { x.StandardVehicle = false; return x; }).ToList();
+            }
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

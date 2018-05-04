@@ -76,7 +76,27 @@
         };
 
     // Set status StandardVehicle on vehicle from the database:
-        //$scope.standardVehicle = function () {
+    $scope.standardVehicle = function (vehicle) {
 
-    //};
+        // Standardfordon:
+        if (vehicle.StandardVehicle === false) {
+            vehicle.StandardVehicle = true;
+        } else {
+            vehicle.StandardVehicle = false;
+        }
+
+        // Send the value (true/false) to the API:
+        $http({
+            method: 'PUT',
+            url: vehicleUrl + '/' + vehicle.Id,
+            data: vehicle,
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('bearer')
+            }
+        }).then(function (data) {
+            $route.reload();
+        });
+        console.log(vehicle);
+    };
 });
