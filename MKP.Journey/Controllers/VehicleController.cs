@@ -89,6 +89,8 @@ namespace Journey.Controllers
         [ResponseType(typeof(Vehicle))]
         public async Task<IHttpActionResult> PostVehicle(Vehicle vehicle)
         {
+            try
+            {
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
@@ -96,6 +98,12 @@ namespace Journey.Controllers
 
                 db.Vehicles.Add(vehicle);
                 await db.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _log.Error("WHOOPS, Something went wrong...", ex);
+            }
+
             return Ok(vehicle);
         }
 
