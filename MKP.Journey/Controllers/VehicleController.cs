@@ -17,8 +17,10 @@ namespace Journey.Controllers
     [RoutePrefix("api/vehicle")]
     public class VehicleController : ApiController
     {
-
         private DefaultDataContext db = new DefaultDataContext();
+
+        // Log4Net:
+        readonly log4net.ILog _log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         [Route("")]
         public IQueryable<Vehicle> GetVehicle()
@@ -87,14 +89,13 @@ namespace Journey.Controllers
         [ResponseType(typeof(Vehicle))]
         public async Task<IHttpActionResult> PostVehicle(Vehicle vehicle)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            db.Vehicles.Add(vehicle);
-            await db.SaveChangesAsync();
-
+                db.Vehicles.Add(vehicle);
+                await db.SaveChangesAsync();
             return Ok(vehicle);
         }
 
