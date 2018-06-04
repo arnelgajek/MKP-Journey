@@ -13,14 +13,14 @@ namespace MKP.Journey
     {
         protected void Application_Start()
         {
+            // Log4Net:
+            log4net.Config.XmlConfigurator.Configure();
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            // Log4Net:
-            //log4net.Config.XmlConfigurator.Configure();
         }
     }
 }

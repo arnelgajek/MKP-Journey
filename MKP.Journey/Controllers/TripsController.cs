@@ -1,4 +1,5 @@
-﻿using MKP.Journey.DataAccess;
+﻿using log4net;
+using MKP.Journey.DataAccess;
 using MKP.Journey.Models;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,12 @@ using System.Web.Http.Description;
 
 namespace MKP.Journey.Controllers
 {
+
     [Authorize]
     [RoutePrefix("api/trips")]
     public class TripsController : ApiController
     {
-
+        
         private DefaultDataContext db = new DefaultDataContext();
 
         [Route("")]
