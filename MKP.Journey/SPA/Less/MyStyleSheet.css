@@ -24,28 +24,33 @@
   body .createAccountBox input,
   body .newJourneyBox input,
   body .summaryBox input,
+  body .reportBox input,
   body .loginBox select,
   body .createAccountBox select,
   body .newJourneyBox select,
-  body .summaryBox select {
+  body .summaryBox select,
+  body .reportBox select {
     margin-bottom: 10px;
   }
   body .loginBox textarea,
   body .createAccountBox textarea,
   body .newJourneyBox textarea,
-  body .summaryBox textarea {
+  body .summaryBox textarea,
+  body .reportBox textarea {
     margin-bottom: 10px;
   }
   body .loginBox h3,
   body .createAccountBox h3,
   body .newJourneyBox h3,
-  body .summaryBox h3 {
+  body .summaryBox h3,
+  body .reportBox h3 {
     margin-top: 60px;
   }
   body .loginBox #loginProfileImage,
   body .createAccountBox #loginProfileImage,
   body .newJourneyBox #loginProfileImage,
-  body .summaryBox #loginProfileImage {
+  body .summaryBox #loginProfileImage,
+  body .reportBox #loginProfileImage {
     margin-top: 60px;
   }
   input#dateToday.form-control {

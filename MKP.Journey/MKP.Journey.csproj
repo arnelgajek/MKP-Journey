@@ -241,11 +241,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="PDF_iTextSharp\Helpers\PdfHelper.cs" />
     <Compile Include="Migrations\201804301135141_Initial-Create.cs" />
     <Compile Include="Migrations\201804301135141_Initial-Create.Designer.cs">
       <DependentUpon>201804301135141_Initial-Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PDF_iTextSharp\Models\DownloadModel.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="SPA\SupportChat\ChatHub.cs" />
@@ -301,6 +304,8 @@
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-aria.min.js" />
+    <Content Include="Scripts\angular-chart.js" />
+    <Content Include="Scripts\angular-chart.min.js" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
@@ -326,6 +331,8 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -1147,8 +1154,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="logs\" />
-    <Folder Include="PDF_iTextSharp\Helpers\" />
-    <Folder Include="PDF_iTextSharp\Models\" />
     <Folder Include="PDF_iTextSharp\Repositories\" />
   </ItemGroup>
   <ItemGroup>

@@ -23,6 +23,12 @@ namespace MKP.Journey.Controllers
         
         private DefaultDataContext db = new DefaultDataContext();
 
+        // GET a list of trips done by a vehicle.
+        public List<Trip> GetTripsByVehicleId(int id)
+        {
+            return db.Trips.Where(x => x.VehicleId == id).ToList();
+        }
+
         [Route("")]
         public IQueryable<Trip> GetTrips()
         {

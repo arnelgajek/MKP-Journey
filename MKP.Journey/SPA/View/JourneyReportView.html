@@ -1,14 +1,32 @@
 ﻿<data-ng-include src="'/SPA/Includes/Menu.PartialView.html'">
     Menu.PartialView.html
 </data-ng-include>
+
+<div class="reportBox">
     <div class="page-header">
-        <br />
         <h3><strong>{{titleJourneyReport}}</strong></h3>
+    </div>
+    <div class="form-group">
         <!-- Dropdownlista med fordon. -->
+        <select class="form-control" id="regNumber" data-ng-model="report.VehicleId" data-ng-options="vehicle.Id as vehicle.RegNumber for vehicle in vehicles | filter: {Status: 1}"></select>
         <!-- Datepicker1 -->
+        <input type="text" class="form-control" placeholder="År-Månad-Dag" id="fromDate" data-ng-model="report.fromdate" />
         <!-- Datepicker2-->
+        <input type="text" class="form-control" placeholder="År-Månad-Dag" id="toDate" data-ng-model="report.todate" />
         <!-- Resultatet på ovan val av fordon och datum ska presentera ett diagram: -->
+        <button type="button" id="fromToDate" data-ng-click="getTheChart()" class="btn btn-default"><strong>Hämta resultat</strong></button>
         <!-- Doughnut-diagram (cirkel) -->
         <!-- 3 olika spam 0-20km (grå färg), 21-50km (blå färg), 51-200km (röd färg). -->
-        <!-- Diagrammet ska kunna generera en PDF-fil som ska laddas ner automatisk genom att trycka på "skapa PDF". -->
     </div>
+    <!-- Diagrammet ska kunna generera en PDF-fil som ska laddas ner automatisk genom att trycka på "skapa PDF". -->
+    <button type="button" id="newJourneyButton" data-ng-click="createPDF()" class="btn btn-default"><strong>Skapa PDF</strong></button>
+    <br />
+    <br />
+</div>
+
+
+
+
+        
+
+
