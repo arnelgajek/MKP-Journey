@@ -1132,6 +1132,7 @@
     <Content Include="SPA\Less\MyStyleSheet.min.css">
       <DependentUpon>MyStyleSheet.css</DependentUpon>
     </Content>
+    <Content Include="SPA\Services\chartService.js" />
     <Content Include="SPA\View\ChatSupportView.html" />
     <Content Include="SPA\View\CreateAccountView.html" />
     <Content Include="SPA\View\HandleVehicleView.html" />
