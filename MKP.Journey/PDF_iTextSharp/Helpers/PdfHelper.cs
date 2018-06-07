@@ -26,22 +26,23 @@ namespace MKP.Journey.Helpers
             return url;
         }
 
-        private static string BuildPdfAndReturnUrl(List<Trip> vehicleTrips, Vehicle vehicle, DateTime fromDate, DateTime toDate)
+        private static string BuildPdfAndReturnUrl(List<Trip> vehicleTrips, Vehicle vehicle, string fromDate, string toDate)
         {
-            var savePath = @"/pdfReportDocuments"; // Sets the destination of the PDF-document.
-            var fileSuffix = string.Format("/{0}_trips.pdf", vehicle.RegNumber);
+            var destination = @"/pdfDocuments"; // Sets the destination of the PDF-document.
+            var fileSuffix = string.Format("/{0}_Tripinformation.pdf", vehicle.RegNumber);
 
-            //Creats the destination folder if it doesn't already exist:
-            if (!Directory.Exists(System.Web.HttpContext.Current.Server.MapPath(savePath)))
-                Directory.CreateDirectory(savePath);
+            //Creats the destination folder if it doesn't exist:
+            if (!Directory.Exists(HttpContext.Current.Server.MapPath(destination)))
+                Directory.CreateDirectory(destination);
 
             using (Document document = new Document(PageSize.A4))
             {
-                var internalPath = @"C:\Users\Administratör\source\repos\Project-Journey\MKP.Journey";
+                var internalPath = @"C:\Temp";
 
-                using (PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(internalPath + savePath + fileSuffix, FileMode.Create)))
+                using (PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(internalPath + destination + fileSuffix, FileMode.Create)))
                 {
                     document.Open(); // Opens the PDF-document.
+
                     BaseFont baseHelvetica = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
                     var color = BaseColor.BLACK;
                     Font helvetica = new Font(baseHelvetica, 20, Font.BOLD, color);
@@ -84,11 +85,11 @@ namespace MKP.Journey.Helpers
                         table.SpacingAfter = 10;
                         document.Add(table);
                     }
-                    document.Close(); // Closes the PDF-document.
+                    document.Close(); // Closes the PDF-document when finished.
                 }
             }
             // return a downloadable path to the generated pdf.
-            return string.Format("{0}{1}", savePath, fileSuffix);
+            return string.Format("{0}{1}", destination, fileSuffix);
         }
     }
 }

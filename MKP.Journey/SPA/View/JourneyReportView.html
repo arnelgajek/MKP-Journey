@@ -10,14 +10,15 @@
         <!-- Dropdownlista med fordon. -->
         <select class="form-control" id="regNumber" data-ng-model="report.VehicleId" data-ng-options="vehicle.Id as vehicle.RegNumber for vehicle in vehicles | filter: {Status: 1}"></select>
         <!-- Datepicker1 -->
-        <input type="text" class="form-control" placeholder="År-Månad-Dag" id="fromDate" data-ng-model="report.fromdate" />
+        <input type="text" class="form-control" placeholder="År-Månad-Dag" id="fromDate" data-ng-model="report.fromDate" />
         <!-- Datepicker2-->
-        <input type="text" class="form-control" placeholder="År-Månad-Dag" id="toDate" data-ng-model="report.todate" />
+        <input type="text" class="form-control" placeholder="År-Månad-Dag" id="toDate" data-ng-model="report.toDate" />
         <!-- Resultatet på ovan val av fordon och datum ska presentera ett diagram: -->
-        <button type="button" id="fromToDate" data-ng-click="getTheChart()" class="btn btn-default"><strong>Skapa rapport</strong></button>
+        <button type="submit" id="getTheChart" data-ng-click="getTheChart(report)" class="btn btn-default"><strong>Skapa rapport</strong></button>
         <!-- Doughnut-diagram (cirkel) -->
         <!-- 3 olika spam 0-20km (grå färg), 21-50km (blå färg), 51-200km (röd färg). -->
-        <div ng-show="showTheChart">
+        <div data-ng-show="showTheChart">
+            <hr />
             <canvas id="doughnut" class="chart chart-doughnut"
                     chart-data="chartData" 
                     chart-labels="chartLabels"

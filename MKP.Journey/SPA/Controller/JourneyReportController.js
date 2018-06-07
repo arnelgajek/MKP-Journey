@@ -19,44 +19,41 @@
         $scope.vehicles = response.data;
     }, function (error) {
         console.log(error);
-        });
+    });
 
-    var fromPickedDate = new Date();
-    var toPickedDate = new Date();
-    $scope.createChart = {
+    var fromPickedDate = new String();
+    var toPickedDate = new String();
+    $scope.report = {
         vehicleId: '',
         fromDate: fromPickedDate,
         toDate: toPickedDate
     };
 
-     //The button that posts data into chartApi:
+    //The button that posts data into chartApi:
     $scope.getTheChart = function () {
         $http({
-        method: 'POST',
-        url: chartApi,
-        data: $.param($scope.createChart),  // Passes in the data as a string.
-        headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Bearer ' + localStorage.getItem('bearer')
-        }
+            method: 'POST',
+            url: chartApi,
+            data: $.param($scope.report),  // Passes in the data as a string.
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + localStorage.getItem('bearer')
+            }
         }).then(function (response) {
-                $scope.showTheChart = true;
-                var trips = response.data;
-                $scope.chartLabels = ["Resor mellan 0-20km", "Resor mellan 21-50km", "Resor mellan 51-200km"];
-                $scope.chartData = [0, 0, 0];
+            $scope.showTheChart = true;
+            var trips = response.data;
+            $scope.chartLabels = ["Resor mellan 0-20km", "Resor mellan 21-50km", "Resor mellan 51-200km"];
+            $scope.chartData = [0, 0, 0];
 
-                angular.forEach(response.data, function (trip) {
-                var kmTotalChart = trip.kmStop - trip.kmStart;
+            angular.forEach(response.data, function (trip) {
+                var kmTotalChart = report.kmStop - report.kmStart;
                 if (kmTotalChart <= 20) {
                     $scope.chartData[0]++;
                 } else if (kmTotalChart > 20 && kmTotalChart <= 50) {
                     $scope.chartData[1]++;
                 } else if (kmTotalChart > 50) {
                     $scope.chartData[2]++;
-                }, function (error) {
-                    console.log(error);
-                });
-
+                };
                 $scope.clickTheChart = function (event) {
                     if (event) {
                         var index = event[0]._index;
@@ -64,24 +61,25 @@
                     }
                 };
             });
-    };
-
-    // The button that generates the PDF:
-    $scope.createPDF = function () {
-        $http({
-            method: 'POST',
-            url: generatePdfApi,
-            data: $.param($scope.report),  // Passes in the data as a string.
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': 'Bearer ' + localStorage.getItem('bearer')
-            }
-        }).then(function (response) {
-            $scope.pdfUrl = response.data;
-            $scope.createPDF = true;
-        }, function (error) {
-            $scope.pdfUrl = "";
-            console.log(error);
         });
-    }
+
+        // The button that generates the PDF:
+        $scope.createPDF = function () {
+            $http({
+                method: 'POST',
+                url: generatePdfApi,
+                data: $.param($scope.report),  // Passes in the data as a string.
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Bearer ' + localStorage.getItem('bearer')
+                }
+            }).then(function (response) {
+                $scope.pdfUrl = response.data;
+                $scope.createPDF = true;
+            }, function (error) {
+                $scope.pdfUrl = "";
+                console.log(error);
+            });
+        }
+    };
 });

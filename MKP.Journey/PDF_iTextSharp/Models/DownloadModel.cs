@@ -8,7 +8,7 @@ namespace MKP.Journey.Models
     public class DownloadModel
     {
         public int VehicleId { get; set; }
-        public DateTime FromDate { get; set; }
-        public DateTime ToDate { get; set; }
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
     }
 }
