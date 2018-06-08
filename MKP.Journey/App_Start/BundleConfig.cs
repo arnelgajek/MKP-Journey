@@ -17,12 +17,33 @@ namespace MKP.Journey
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                        "~/Content/bootstrap.css",
+                        "~/Content/bootstrap/bootstrap.min.css",
+                        "~/Content/site.css",
+                        "~/SPA/Less/MyStyleSheet.css"));
+
+            bundles.Add(new ScriptBundle("~/js/app").Include(
+                        "~/Scripts/jquery-3.3.1.min.js",
+                        "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-route.min.js",
+                        "~/Scripts/bootstrap.min.js.js",
+                        "~/Scripts/Chart.min.js.js",
+                        "~/Scripts/angular-chart.min.js",
+                        "~/Scripts/jquery.signalR-2.2.3.min.js",
+                        "~/SPA/App.js",
+                        "~/SPA/Controller/ChatSupportController.js",
+                        "~/SPA/Controller/CreateAccountController.js",
+                        "~/SPA/Controller/HandleVehicleController.js",
+                        "~/SPA/Controller/JourneyReportController.js",
+                        "~/SPA/Controller/LoginController.js",
+                        "~/SPA/Controller/LogoutController.js",
+                        "~/SPA/Controller/NewJourneyController.js",
+                        "~/SPA/Controller/SummaryController.js"
+                ));
         }
     }
 }
