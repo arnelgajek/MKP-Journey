@@ -23,8 +23,9 @@
 
     var fromPickedDate = new String();
     var toPickedDate = new String();
+
     $scope.report = {
-        vehicleId: '',
+        VehicleId: '',
         fromDate: fromPickedDate,
         toDate: toPickedDate
     };
@@ -46,7 +47,7 @@
             $scope.chartData = [0, 0, 0];
 
             angular.forEach(response.data, function (trip) {
-                var kmTotalChart = report.kmStop - report.kmStart;
+                var kmTotalChart = trip.KmStop - trip.KmStart;
                 if (kmTotalChart <= 20) {
                     $scope.chartData[0]++;
                 } else if (kmTotalChart > 20 && kmTotalChart <= 50) {
@@ -54,7 +55,7 @@
                 } else if (kmTotalChart > 50) {
                     $scope.chartData[2]++;
                 };
-                $scope.clickTheChart = function (event) {
+                $scope.chartClick = function (event) {
                     if (event) {
                         var index = event[0]._index;
                         console.log(trips[index]);

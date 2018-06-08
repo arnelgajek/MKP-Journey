@@ -30,10 +30,10 @@ namespace MKP.Journey.Controllers
             return db.Trips.Where(x => x.VehicleId == id).ToList();
         }
 
-        //public List<Trip> GetTripsByDates(int id, string fromDate, string toDate)
-        //{
-        //    return db.Trips.Where(x => x.VehicleId == id && x.Date < fromDate && x.Date < toDate).ToList();
-        //}
+        public List<Trip> GetTripsByDates(int id, string fromDate, string toDate)
+        {
+            return db.Trips.Where(x => x.VehicleId == id).ToList();
+        }
 
         [Route("")]
         public IQueryable<Trip> GetTrips()

@@ -26,8 +26,8 @@ namespace MKP.Journey.Controllers
         public IHttpActionResult GenerateChart(DownloadModel selection)
         {
             var tripsController = new TripsController();
-            //var vehicleTrips = tripsController.GetTripsByDates(selection.VehicleId, selection.FromDate, selection.ToDate);
-            return Ok(/*vehicleTrips*/);
+            var vehicleTrips = tripsController.GetTripsByDates(selection.VehicleId, selection.FromDate, selection.ToDate);
+            return Ok(vehicleTrips);
         }
     }
 }
